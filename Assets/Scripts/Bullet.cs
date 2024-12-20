@@ -19,4 +19,12 @@ public class Bullet : MonoBehaviour
         // Move the projectile in the calculated direction
         transform.position += shootDirection * speed * Time.deltaTime;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Asteroid")
+        {
+            collision.gameObject.GetComponent<Asteroid>().TakeDamage(2f,WeaponType.Basic, 0f);
+            Destroy(gameObject);
+        }
+    }
 }

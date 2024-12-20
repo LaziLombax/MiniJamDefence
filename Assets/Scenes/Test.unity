@@ -749,6 +749,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser
       objectReference: {fileID: 0}
+    - target: {fileID: 5628841932623607411, guid: 7c22e65e53402e847b469cbfb3a2cb06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8168178083091954438, guid: 7c22e65e53402e847b469cbfb3a2cb06, type: 3}
       propertyPath: maxHeat
       value: 10
