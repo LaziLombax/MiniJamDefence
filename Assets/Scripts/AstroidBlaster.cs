@@ -8,7 +8,12 @@ public class AstroidBlaster : MonoBehaviour
     public float inaccuracy = 5f;       // Amount of random spread (in degrees)
 
     private float nextFireTime;
-    public InputHandler playerInput;
+    private InputHandler playerInput;
+
+    private void Start()
+    {
+        playerInput = GameManager.Instance.InputHandler;
+    }
 
     void Update()
     {
@@ -24,18 +29,21 @@ public class AstroidBlaster : MonoBehaviour
     void FireProjectile()
     {
         // Instantiate the projectile at the shooter's position
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
 
-        // Apply a random spread to the projectile's direction
-        float randomSpread = Random.Range(-inaccuracy, inaccuracy);
-        Vector3 shootDirection = Quaternion.Euler(0, 0, randomSpread) * Vector3.right;
+        //// Get the direction the shooter is currently facing
+        //Vector3 baseDirection = transform.right;
 
-        // Add force to the projectile's Rigidbody2D component
-        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        rb.linearVelocity = shootDirection * projectileSpeed;
+        //// Apply a random spread to the projectile's direction
+        //float randomSpread = Random.Range(-inaccuracy, inaccuracy);
+        //Vector3 shootDirection = Quaternion.Euler(0, 0, randomSpread) * baseDirection;
 
-        // Set the projectile's facing direction (sprite facing right)
-        projectile.transform.right = Vector3.right;
+        //// Add force to the projectile's Rigidbody2D component
+        //Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        //rb.linearVelocity = shootDirection * projectileSpeed;
+
+        //// Align the projectile's local right direction with its velocity
+        //projectile.transform.right = rb.linearVelocity.normalized;
 
         Destroy(projectile, 3f);
     }
