@@ -50,22 +50,25 @@ public class LaserWeapon : MonoBehaviour
         {
             currentHeat += heatPerShot * Time.deltaTime;
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, laserRange);
-            if (hit.collider != null && hit.collider.CompareTag("Asteroid"))
+            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.right, laserRange);
+            foreach (RaycastHit2D hit in hits)
             {
-                Asteroid asteroid = hit.collider.GetComponent<Asteroid>();
-                if (asteroid != null)
+                if (hit.collider != null && hit.collider.CompareTag("Asteroid"))
                 {
-                    asteroid.TakeDamage(laserDamage, WeaponType.Laser, 0.02f);
-                }
+                    Asteroid asteroid = hit.collider.GetComponent<Asteroid>();
+                    if (asteroid != null)
+                    {
+                        asteroid.TakeDamage(laserDamage, WeaponType.Laser, 0.02f);
+                    }
 
-                // Draw the laser line
-                DrawLaser(transform.position, hit.point);
-            }
-            else
-            {
-                // Draw the laser line to the maximum range
-                DrawLaser(transform.position, transform.position + transform.right * laserRange);
+                    // Draw the laser line
+                    DrawLaser(transform.position, hit.point);
+                }
+                else
+                {
+                    // Draw the laser line to the maximum range
+                    DrawLaser(transform.position, transform.position + transform.right * laserRange);
+                }
             }
         }
     }
