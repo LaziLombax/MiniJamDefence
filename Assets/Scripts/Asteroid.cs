@@ -16,10 +16,13 @@ public class Asteroid : MonoBehaviour
     public float splitVelocity = 2f; // Velocity of the split asteroids that can be changed in the editor
     public float collectableSize = 0.5f; // Size threshold for collectable asteroids
     public int resourceValue = 1; // Resource value of the asteroid
+    public float pushForce = 2f; // Force applied to push asteroids away from each other
 
     private Transform earth;
     private Vector3 velocity = Vector3.zero;
     private Dictionary<WeaponType, float> lastDamageTimes = new Dictionary<WeaponType, float>(); // Tracks the last time the asteroid took damage for each weapon type
+
+    public Color pickUpColour;
 
     void Start()
     {
@@ -38,6 +41,7 @@ public class Asteroid : MonoBehaviour
         if (transform.localScale.x <= collectableSize)
         {
             gameObject.tag = "Collectable";
+            this.GetComponent<SpriteRenderer>().color = pickUpColour;
             transform.localScale = new Vector3(collectableSize / 0.8f, collectableSize / 0.8f, collectableSize / 0.8f);
         }
     }
@@ -81,7 +85,7 @@ public class Asteroid : MonoBehaviour
         {
             // Randomize the spawn position slightly
             Vector3 randomSpawnOffset = new Vector3(Random.Range(-randomSpawnOffsetRange, randomSpawnOffsetRange), Random.Range(-randomSpawnOffsetRange, randomSpawnOffsetRange), 0);
-            GameObject smallerAsteroid = Instantiate(gameObject, transform.position + randomSpawnOffset, Quaternion.identity);
+            GameObject smallerAsteroid = Instantiate(gameObject, transform.position + (randomSpawnOffset * transform.localScale.magnitude), Quaternion.identity);
             Asteroid asteroidScript = smallerAsteroid.GetComponent<Asteroid>();
 
             if (asteroidScript != null)
@@ -135,7 +139,36 @@ public class Asteroid : MonoBehaviour
             GameManager.Instance.AddResources(resourceValue);
             Destroy(gameObject);
         }
+        else if (collision.gameObject.CompareTag("Asteroid"))
+        {
+            // Push the asteroids away from each other
+            Vector3 pushDirection = (collision.transform.position - transform.position).normalized;
+            Asteroid otherAsteroid = collision.gameObject.GetComponent<Asteroid>();
+            if (otherAsteroid != null)
+            {
+                // Adjust velocities to push asteroids away from each other
+                velocity += -pushDirection * pushForce;
+                otherAsteroid.velocity += pushDirection * pushForce;
+            }
+        }
     }
+
+    public void RunExplode()
+    {
+        // Implement the logic for the asteroid explosion
+        Debug.Log("Asteroid exploded: " + gameObject.name);
+        // Add explosion effects, sound, etc.
+        Invoke("Explode", 0.5f);
+    }
+
+    public void Explode()
+    {
+        GameManager.Instance.RecordDamage(gameObject);
+
+        // Destroy the asteroid after the explosion
+        Destroy(gameObject);
+    }
+
 }
 
 public enum WeaponType
