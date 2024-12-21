@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 7238495579525510919}
   - component: {fileID: 896349377977156216}
   - component: {fileID: 1601449126708938293}
+  - component: {fileID: 6259458542797498541}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -595,6 +596,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6259458542797498541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8235197544148070744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ede24a89c84c041abfd5c6102015bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyDelay: 0.1
 --- !u!1 &8759940991010405396
 GameObject:
   m_ObjectHideFlags: 0

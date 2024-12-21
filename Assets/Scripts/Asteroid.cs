@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.VFX;
 
 public class Asteroid : MonoBehaviour
 {
@@ -23,7 +24,9 @@ public class Asteroid : MonoBehaviour
     private Dictionary<WeaponType, float> lastDamageTimes = new Dictionary<WeaponType, float>(); // Tracks the last time the asteroid took damage for each weapon type
 
     public Color pickUpColour;
+    public SpriteRenderer SpriteRenderer;
 
+    public VisualEffect breakVFX;
     void Start()
     {
         initHealth = health;
@@ -41,7 +44,7 @@ public class Asteroid : MonoBehaviour
         if (transform.localScale.x <= collectableSize)
         {
             gameObject.tag = "Collectable";
-            this.GetComponent<SpriteRenderer>().color = pickUpColour;
+            SpriteRenderer.color = pickUpColour;
             transform.localScale = new Vector3(collectableSize / 0.8f, collectableSize / 0.8f, collectableSize / 0.8f);
         }
     }
@@ -167,6 +170,19 @@ public class Asteroid : MonoBehaviour
 
         // Destroy the asteroid after the explosion
         Destroy(gameObject);
+    }
+    public void BreakVFX(bool isDestoryed)
+    {
+        if(isDestoryed)
+        {
+            breakVFX.SetFloat("Amount", 15f);
+            Destroy(breakVFX.gameObject, 2f);
+        }
+        else
+        {
+            breakVFX.SetFloat("Amount", 15f);
+        }
+        breakVFX.SendEvent("Break");
     }
 
 }

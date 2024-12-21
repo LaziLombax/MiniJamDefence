@@ -6,12 +6,12 @@ public class Atmosphere : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("CollectableAsteroid"))
+        if (other.CompareTag("Collectable"))
         {
             // Destroy the collectable asteroid after a short delay
             Destroy(other.gameObject, destroyDelay);
         }
-        else if (other.CompareTag("BiggerAsteroid"))
+        else
         {
             // Record damage in the GameManager
             GameManager.Instance.RecordDamage(other.gameObject);
@@ -23,8 +23,9 @@ public class Atmosphere : MonoBehaviour
 
     void ExplodeAsteroid(GameObject asteroid)
     {
-        // Assuming the asteroid has an Explode method
-        asteroid.GetComponent<Asteroid>().RunExplode();
+        if (asteroid.GetComponent<Asteroid>() != null)
+            // Assuming the asteroid has an Explode method
+            asteroid.GetComponent<Asteroid>().RunExplode();
 
     }
 }
