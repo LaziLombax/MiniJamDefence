@@ -24,9 +24,21 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Asteroid")
         {
-            collision.gameObject.GetComponent<Asteroid>().TakeDamage(2f * GameManager.Instance.bulletDamageMultiplier,WeaponType.Basic, 0f);
+            collision.gameObject.GetComponent<Asteroid>().TakeDamage(CalculateDamage(), WeaponType.Basic, 0f);
             Destroy(gameObject);
         }
+    }
+
+    private float CalculateDamage()
+    {
+        switch (bulletType)
+        {
+            case BulletType.Basic:
+                return GameManager.Instance.blasterDamage;
+            case BulletType.Turret:
+                return GameManager.Instance.turretDamage;
+        }
+        return 0;
     }
 }
 
@@ -35,5 +47,4 @@ public enum BulletType
 {
     Basic,
     Turret,
-    Explosive
 }
