@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public InputHandler InputHandler;
     [HideInInspector] public UIHandler UIHandler;
 
+    private DefenseSystem defenceSystem;
     public int resources = 0; // Resource count
     public int baseResourcesNeeded = 5;
     public int currentResourcesNeeded;
@@ -15,8 +16,23 @@ public class GameManager : MonoBehaviour
 
     public float bulletDamageMultiplier = 1f;
 
+    [Header("'Laser' Variables")]
+    public int laserCount = 0;
+    public float laserRange = 3f; // Radius of the turret orbit around the earth
+    public float heatPerShot = 1; // Heat generated per shot
+    public float maxHeat = 100f; // Maximum heat before cooldown
+    public float heatDissipationRate = 5f; // Rate at which heat dissipates over time
+    public float laserDamage = 1; // Damage dealt by the laser
+
+
     [Header("Turret Variables")]
-    public float turretRadius = 5f; // Radius of the turret orbit around the earth
+    public int turretCount = 0;
+    public float orbitRadius = 5f;
+    public float orbitSpeed = 5f;
+    public float turretDetectionRange = 10f;
+    public float turretFireRate = 1f;
+    public float turretRadius = 3f; // Radius of the turret orbit around the earth
+
 
     [Header("Blaster Variables")]
     public float blasterFireRate = 1f; // Fire rate of the blaster
@@ -24,6 +40,34 @@ public class GameManager : MonoBehaviour
 
     [Header("Defence Rig Variables")]
     public float rigRotationSpeed = 5f; // Speed at which the defence rig rotates towards the mouse
+
+    private List<UpgradeMethod> obtainedUpgrades = new List<UpgradeMethod>();
+
+    private List<UpgradeMethod> laserUpgrades = new List<UpgradeMethod>() {
+        UpgradeMethod.addTurret1,
+        UpgradeMethod.addTurret2,
+        UpgradeMethod.addTurret3,
+        UpgradeMethod.addTurret4,
+        UpgradeMethod.addTurret5
+    };
+
+    private List<UpgradeMethod> turretUpgrades = new List<UpgradeMethod>() {
+        UpgradeMethod.addTurret1,
+        UpgradeMethod.addTurret2,
+        UpgradeMethod.addTurret3,
+        UpgradeMethod.addTurret4,
+        UpgradeMethod.addTurret5,
+    };
+
+    private UpgradeMethod[] availableUpgrades;
+
+    private void Update()
+    {
+        if ((Input.GetButtonDown("L")))
+        {
+            UIHandler.UpgradeMenu();
+        }
+    }
 
     void Awake()
     {
@@ -33,6 +77,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             InputHandler = gameObject.AddComponent<InputHandler>();
+            availableUpgrades = (UpgradeMethod[])System.Enum.GetValues(typeof(UpgradeMethod));
+            defenceSystem = GameObject.FindGameObjectWithTag("DefenceRig").GetComponent<DefenseSystem>();
         }
         else
         {
@@ -40,13 +86,14 @@ public class GameManager : MonoBehaviour
         }
         currentResourcesNeeded = baseResourcesNeeded;
     }
+
     // Method to add resources
     public void AddResources(int amount)
     {
         resources += amount;
 
         // If the player has the required amount of resources, upgrade
-        if(currentResourcesNeeded <= resources)
+        if (currentResourcesNeeded <= resources)
         {
             resources -= currentResourcesNeeded;
             currentResourcesNeeded += baseResourcesNeeded;
@@ -71,6 +118,123 @@ public class GameManager : MonoBehaviour
     public void Upgrade(UpgradeMethod upgrade)
     {
         Invoke(upgrade.ToString(), 0f);
+        obtainedUpgrades.Add(upgrade);
+    }
+
+    public void BulletDamageIncrease1()
+    {
+        Debug.Log("Upgraded Bullet Damage 1");
+        bulletDamageMultiplier += 1;
+    }
+
+    public void BulletDamageIncrease2()
+    {
+        Debug.Log("Upgraded Bullet Damage 2");
+        bulletDamageMultiplier += 1.5f;
+    }
+
+    public void BulletDamageIncrease3()
+    {
+        Debug.Log("Upgraded Bullet Damage 3");
+        bulletDamageMultiplier += 2;
+    }
+
+    public void BlasterFireRateIncrease1()
+    {
+        Debug.Log("Increased Blaster Fire Rate 1");
+        blasterFireRate += 0.5f;
+    }
+
+    public void BlasterFireRateIncrease2()
+    {
+        Debug.Log("Increased Blaster Fire Rate 2");
+        blasterFireRate += 0.75f;
+    }
+
+    public void BlasterFireRateIncrease3()
+    {
+        Debug.Log("Increased Blaster Fire Rate 3");
+        blasterFireRate += 1f;
+    }
+
+    public void BlasterFireRateIncrease4()
+    {
+        Debug.Log("Increased Blaster Fire Rate 4");
+        blasterFireRate += 1.25f;
+    }
+
+    public void FirstLaser()
+    {
+        Debug.Log("Unlocked First Laser");
+        laserCount++;
+        defenceSystem.SpawnLasers(laserCount, 1);
+    }
+
+    public void FirstTurret()
+    {
+        Debug.Log("Unlocked First Turret");
+        turretCount++;
+        defenceSystem.SpawnTurrets(turretCount);
+    }
+
+    public void addLaser1()
+    {
+        Debug.Log("Added Laser");
+        laserCount++;
+        defenceSystem.SpawnLasers(laserCount, 1);
+    }
+
+    public void addLaser2()
+    {
+        addLaser1();
+    }
+
+    public void addLaser3()
+    {
+        addLaser1();
+
+    }
+
+    public void addLaser4()
+    {
+        addLaser1();
+    }
+
+    public void addLaser5()
+    {
+        addLaser1();
+    }
+
+    public void addLaser6()
+    {
+        addLaser1();
+    }
+
+    public void addTurret1()
+    {
+        Debug.Log("Added Turret");
+        turretCount++;
+        defenceSystem.SpawnTurrets(turretCount);
+    }
+
+    public void addTurret2()
+    {
+        addTurret1();
+    }
+
+    public void addTurret3()
+    {
+        addTurret1();
+    }
+
+    public void addTurret4()
+    {
+        addTurret1();
+    }
+
+    public void addTurret5()
+    {
+        addTurret1();
     }
 
     public void BulletDamageIncrease()
@@ -79,12 +243,52 @@ public class GameManager : MonoBehaviour
         bulletDamageMultiplier += 1;
     }
 
-}
+    public void BlasterFireRateIncrease()
+    {
+        Debug.Log("Increased Blaster Fire Rate");
+        blasterFireRate += 0.5f;
+    }
 
+    public UpgradeMethod[] GetAvailableUpgrades()
+    {
+        List<UpgradeMethod> available = new List<UpgradeMethod>(availableUpgrades);
+
+        if (obtainedUpgrades.Contains(UpgradeMethod.FirstLaser))
+            available.AddRange(laserUpgrades);
+        if (obtainedUpgrades.Contains(UpgradeMethod.FirstTurret))
+            available.AddRange(turretUpgrades);
+
+        available.RemoveAll(upgrade => obtainedUpgrades.Contains(upgrade));
+        return available.ToArray();
+    }
+}
 
 public enum UpgradeMethod
 {
-    BulletDamageIncrease,
-    BlasterFireRateIncrease,
+    // unlocks
+    FirstLaser,
+    FirstTurret,
 
+    // Laser Upgrades
+    addLaser1,
+    addLaser2,
+    addLaser3,
+    addLaser4,
+    addLaser5,
+    addLaser6,
+
+    // Turret Upgrades
+    addTurret1,
+    addTurret2,
+    addTurret3,
+    addTurret4,
+    addTurret5,
+
+    BulletDamageIncrease1,
+    BulletDamageIncrease2,
+    BulletDamageIncrease3,
+    BlasterFireRateIncrease1,
+    BlasterFireRateIncrease2,
+    BlasterFireRateIncrease3,
+    BlasterFireRateIncrease4,
 }

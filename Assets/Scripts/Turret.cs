@@ -3,11 +3,7 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     public Transform earth;
-    public float orbitRadius = 5f;
-    public float orbitSpeed = 30f;
-    public float detectionRange = 10f;
     public GameObject bulletPrefab;
-    public float fireRate = 1f;
     public int turretIndex = 0; // Index of this turret
     public int totalTurrets = 1; // Total number of turrets
 
@@ -30,20 +26,20 @@ public class Turret : MonoBehaviour
         if (earth == null) return;
 
         // Update the angle based on the orbit speed
-        angle += orbitSpeed * Time.deltaTime;
+        angle += GameManager.Instance.orbitSpeed * Time.deltaTime;
         if (angle >= 360f) angle -= 360f;
 
         // Update the turret's position based on the new angle
         UpdatePosition();
 
         // Detect nearby asteroids
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, detectionRange);
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, GameManager.Instance.turretDetectionRange);
         foreach (var hitCollider in hitColliders)
         {
             if (hitCollider.CompareTag("Asteroid") && Time.time > nextFireTime)
             {
                 FireBullet(hitCollider.transform);
-                nextFireTime = Time.time + 1f / fireRate;
+                nextFireTime = Time.time + 1f / GameManager.Instance.turretFireRate;
             }
         }
     }

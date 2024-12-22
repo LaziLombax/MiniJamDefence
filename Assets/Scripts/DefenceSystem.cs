@@ -15,7 +15,6 @@ public class DefenseSystem : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
-        SpawnLasers(10, 1f);
         SpawnTurrets(10);
         StartCoroutine(SpawnMinesPeriodically());
     }

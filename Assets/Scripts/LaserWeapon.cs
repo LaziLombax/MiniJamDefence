@@ -2,11 +2,6 @@ using UnityEngine;
 
 public class LaserWeapon : MonoBehaviour
 {
-    public float laserRange = 10f; // Range of the laser
-    public float heatPerShot = 1; // Heat generated per shot
-    public float maxHeat = 100f; // Maximum heat before cooldown
-    public float heatDissipationRate = 5f; // Rate at which heat dissipates over time
-    public float laserDamage = 1; // Damage dealt by the laser
     public LineRenderer lineRenderer; // Reference to the LineRenderer component
 
     public float currentHeat = 0f;
@@ -38,7 +33,7 @@ public class LaserWeapon : MonoBehaviour
         // Dissipate heat over time
         if (currentHeat > 0 && !lineRenderer.enabled )
         {
-            currentHeat -= heatDissipationRate * Time.deltaTime;
+            currentHeat -= GameManager.Instance.heatDissipationRate * Time.deltaTime;
             if (currentHeat < 0)
             {
                 currentHeat = 0;
@@ -46,7 +41,7 @@ public class LaserWeapon : MonoBehaviour
         }
 
         // Check if cooling down
-        if (currentHeat >= maxHeat)
+        if (currentHeat >= GameManager.Instance.maxHeat)
         {
             isCoolingDown = true;
         }
@@ -58,9 +53,9 @@ public class LaserWeapon : MonoBehaviour
 
     void ShootLaser()
     {
-        currentHeat += heatPerShot * Time.deltaTime;
+        currentHeat += GameManager.Instance.heatPerShot * Time.deltaTime;
 
-        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.right, laserRange);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.right, GameManager.Instance.laserRange);
         bool hitAsteroid = false;
 
         foreach (RaycastHit2D hit in hits)
@@ -70,7 +65,7 @@ public class LaserWeapon : MonoBehaviour
                 Asteroid asteroid = hit.collider.GetComponent<Asteroid>();
                 if (asteroid != null)
                 {
-                    asteroid.TakeDamage(laserDamage, WeaponType.Laser, 0.02f);
+                    asteroid.TakeDamage(GameManager.Instance.laserDamage, WeaponType.Laser, 0.02f);
                 }
 
                 // Draw the laser line
@@ -83,7 +78,7 @@ public class LaserWeapon : MonoBehaviour
         if (!hitAsteroid)
         {
             // Draw the laser line to the maximum range
-            DrawLaser(transform.position, transform.position + transform.right * laserRange);
+            DrawLaser(transform.position, transform.position + transform.right * GameManager.Instance.laserRange);
         }
     }
 
