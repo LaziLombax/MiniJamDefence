@@ -49,8 +49,8 @@ public class Turret : MonoBehaviour
         // Calculate the angle offset based on the turret index and total number of turrets
         float angleOffset = (360f / totalTurrets) * turretIndex;
         float radians = (angle + angleOffset) * Mathf.Deg2Rad;
-        float x = earth.position.x + GameManager.Instance.turretRadius * Mathf.Cos(radians);
-        float y = earth.position.y + GameManager.Instance.turretRadius * Mathf.Sin(radians);
+        float x = earth.position.x + GameManager.Instance.turretOrbitRadius * Mathf.Cos(radians);
+        float y = earth.position.y + GameManager.Instance.turretOrbitRadius * Mathf.Sin(radians);
         transform.position = new Vector3(x, y, transform.position.z);
     }
 

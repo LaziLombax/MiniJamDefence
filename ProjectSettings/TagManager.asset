@@ -8,6 +8,10 @@ TagManager:
   - Asteroid
   - Collector
   - Collectable
+  - Blaster
+  - Laser
+  - Mine
+  - DefenceRig
   layers:
   - Default
   - TransparentFX

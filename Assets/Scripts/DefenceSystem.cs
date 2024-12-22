@@ -134,10 +134,16 @@ public class DefenseSystem : MonoBehaviour
     public void SpawnBlasters(int numberOfBlasters)
     {
         DestroyExistingBlasters();
+
+        if (numberOfBlasters <= 0)
+        {
+            return; // No blasters to spawn
+        }
+
         for (int i = 0; i < numberOfBlasters; i++)
         {
             // Calculate the angle for each blaster
-            float angle = Mathf.Lerp(-45f, 45f, (float)i / (numberOfBlasters - 1));
+            float angle = numberOfBlasters == 1 ? 0 : Mathf.Lerp(-45f, 45f, (float)i / (numberOfBlasters - 1));
             float radius = 1;
             Vector3 blasterPosition = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0) * radius;
 
