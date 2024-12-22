@@ -187,8 +187,8 @@ public class UIHandler : MonoBehaviour
         }
 
 
-        blackScreen.interactable = true;
-        blackScreen.blocksRaycasts = true;
+        blackScreen.interactable = false;
+        blackScreen.blocksRaycasts = false;
         Time.timeScale = 1;
     }
 
@@ -203,22 +203,13 @@ public class UIHandler : MonoBehaviour
     {
         Time.timeScale = 0;
         FadeOutCanvasGroupOnClick(upgradeMenu);
-        List<UpgradeMethod> currentMethods = Enum.GetValues(typeof(UpgradeMethod)).Cast<UpgradeMethod>().ToList();
+        //Enum.GetValues(typeof(UpgradeMethod)).Cast<UpgradeMethod>().ToList();
+        UpgradeMethod[] currentMethods = gameManager.GetAvailableUpgrades();
+        UpgradeInfo[] availbleUpgradeCards = upgradeUIInfomation.Where(x => currentMethods.Contains( x.methodKey)).ToArray();
         foreach (UpgradeCard card in upgradeCards)
         {
-            UpgradeMethod methodToUse = currentMethods[UnityEngine.Random.Range(0, currentMethods.Count)];
-            currentMethods.Remove(methodToUse);
-
-
-            UpgradeInfo infoToUse = new UpgradeInfo();
-            foreach (UpgradeInfo info in upgradeUIInfomation)
-            {
-                if (methodToUse == info.methodKey)
-                {
-                    infoToUse = info;
-                    break;
-                }
-            }
+            UpgradeInfo infoToUse = availbleUpgradeCards[UnityEngine.Random.Range(0, availbleUpgradeCards.Length)];
+            UpgradeMethod methodToUse = infoToUse.methodKey;
 
             card.UpdateUpgradeCard(methodToUse, infoToUse);
         }

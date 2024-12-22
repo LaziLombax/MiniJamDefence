@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bff125b5aa347c4fbdd7428c084097c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: {fileID: 8901506235397325280}
   upgradeName: {fileID: 4355071110046144881}
   upgradeIconRenderer: {fileID: 1707602947866972929}
   confirmUpgrade: {fileID: 2254009206029093193}
