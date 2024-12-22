@@ -146,7 +146,7 @@ MonoBehaviour:
   splitSizingFactor: 1.2
   maxVelocity: 0.5
   splitVelocity: 6
-  collectableSize: 0.1
+  collectableSize: 0.2
   resourceValue: 1
   pushForce: 2
   pickUpColour: {r: 0.24056602, g: 1, b: 0.28831708, a: 1}

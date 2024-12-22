@@ -31,61 +31,62 @@ public class AsteroidSpawner : MonoBehaviour
 			nextSpawnTime = Time.time + spawnInterval;
 		}
 	}
+    void SpawnAsteroids()
+    {
+        // Calculate the total health of existing asteroids
+        float existingAsteroidsHealth = CalculateExistingAsteroidsHealth();
 
-	void SpawnAsteroids()
-	{
-		// Calculate the total health of existing asteroids
-		float existingAsteroidsHealth = CalculateExistingAsteroidsHealth();
+        // Calculate the remaining health to distribute among new asteroids
+        float remainingHealth = difficulty - existingAsteroidsHealth;
 
-		// Calculate the remaining health to distribute among new asteroids
-		float remainingHealth = difficulty - existingAsteroidsHealth;
+        if (remainingHealth <= 0)
+        {
+            return; // No need to spawn new asteroids if the existing ones already meet or exceed the difficulty
+        }
 
-		if (remainingHealth <= 0)
-		{
-			return; // No need to spawn new asteroids if the existing ones already meet or exceed the difficulty
-		}
+        // Determine the maximum number of asteroids to spawn based on remaining health and base health
+        int maxAsteroidCount = Mathf.FloorToInt(remainingHealth / baseHealth);
 
-		// Determine the number of asteroids to spawn based on remaining health
-		int minAsteroidCount = 3;
-		int maxAsteroidCount = Mathf.FloorToInt(remainingHealth / 3);
-		int asteroidCount = Random.Range(minAsteroidCount, maxAsteroidCount + 1);
+        // Ensure at least one asteroid is spawned if possible
+        int asteroidCount = Mathf.Max(1, maxAsteroidCount);
 
-		for (int i = 0; i < asteroidCount; i++)
-		{
-			// Instantiate the asteroid
-			GameObject asteroid = Instantiate(asteroidPrefab, Vector3.left * 1000, Quaternion.identity); // spawn outside of range
-			Asteroid asteroidScript = asteroid.GetComponent<Asteroid>();
+        for (int i = 0; i < asteroidCount; i++)
+        {
+            // Instantiate the asteroid
+            GameObject asteroid = Instantiate(asteroidPrefab, Vector3.left * 1000, Quaternion.identity); // spawn outside of range
+            Asteroid asteroidScript = asteroid.GetComponent<Asteroid>();
 
-			if (asteroidScript != null)
-			{
-				// Calculate health and size for the asteroid
-				float asteroidHealth;
-				if (i == asteroidCount - 1)
-				{
-					// Assign remaining health to the last asteroid
-					asteroidHealth = remainingHealth;
-				}
-				else
-				{
-					// Distribute health randomly
-					asteroidHealth = Random.Range(1f, remainingHealth / (asteroidCount - i));
-				}
+            if (asteroidScript != null)
+            {
+                // Calculate health and size for the asteroid
+                float asteroidHealth;
+                if (i == asteroidCount - 1)
+                {
+                    // Assign remaining health to the last asteroid
+                    asteroidHealth = remainingHealth;
+                }
+                else
+                {
+                    // Ensure each asteroid has at least baseHealth
+                    asteroidHealth = Mathf.Min(baseHealth, remainingHealth - baseHealth * (asteroidCount - i - 1));
+                }
 
-				float asteroidSize = baseSize * (asteroidHealth / baseHealth);
-				asteroid.transform.position = GetRandomSpawnPosition(asteroidSize / 2f); // set position
+                float asteroidSize = baseSize * (asteroidHealth / baseHealth);
+                asteroid.transform.position = GetRandomSpawnPosition(asteroidSize / 2f); // set position
 
-				// Set the asteroid's health and size
-				asteroidScript.health = asteroidHealth;
-				asteroidScript.initHealth = asteroidHealth;
-				asteroid.transform.localScale = new Vector3(asteroidSize, asteroidSize, asteroidSize);
+                // Set the asteroid's health and size
+                asteroidScript.health = asteroidHealth;
+                asteroidScript.initHealth = asteroidHealth;
+                asteroid.transform.localScale = new Vector3(asteroidSize, asteroidSize, asteroidSize);
 
-				// Reduce the remaining total health
-				remainingHealth -= asteroidHealth;
-			}
-		}
-	}
+                // Reduce the remaining total health
+                remainingHealth -= asteroidHealth;
+            }
+        }
+    }
 
-	float CalculateExistingAsteroidsHealth()
+
+    float CalculateExistingAsteroidsHealth()
 	{
 		float totalHealth = 0f;
 		Asteroid[] existingAsteroids = FindObjectsOfType<Asteroid>();

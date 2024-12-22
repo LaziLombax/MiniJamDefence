@@ -380,7 +380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6901741681229315089
 RectTransform:
   m_ObjectHideFlags: 0
@@ -721,6 +721,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3111145984077866755}
     m_Modifications:
+    - target: {fileID: 5601434901373254016, guid: 0e9e15630185952439de1bffc7a9214f, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601434901373254016, guid: 0e9e15630185952439de1bffc7a9214f, type: 3}
+      propertyPath: m_MinValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6410432352064735384, guid: 0e9e15630185952439de1bffc7a9214f, type: 3}
       propertyPath: m_Name
       value: MineralBar
@@ -811,6 +819,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7551968658243878798, guid: 0e9e15630185952439de1bffc7a9214f, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7551968658243878798, guid: 0e9e15630185952439de1bffc7a9214f, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -19,7 +19,7 @@ public class AstroidBlaster : MonoBehaviour
         {
             Debug.Log("Shot");
             FireProjectile();
-            nextFireTime = Time.time + GameManager.Instance.blasterFireRate;
+            nextFireTime = Time.time + GameManager.Instance.blasterFireRate + Random.Range(0, 0.2f);
         }
     }
 

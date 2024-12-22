@@ -9,6 +9,9 @@ public class DefenseSystem : MonoBehaviour
     public GameObject minePrefab; // Prefab of the mine to spawn
     public GameObject blasterPrefab; // Prefab of the blaster to spawn
 
+    public float blasterSpawnRadius = 1f; // Radius for spawning blasters
+    public float laserSpawnRadius = 1f; // Radius for spawning lasers
+
     private Camera mainCamera;
 
     void Start()
@@ -57,14 +60,14 @@ public class DefenseSystem : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void SpawnLasers(int numberOfLasers, float radius)
+    public void SpawnLasers(int numberOfLasers)
     {
         DestroyExistingLasers();
         for (int i = 0; i < numberOfLasers; i++)
         {
             // Calculate the angle for each laser
             float angle = i * Mathf.PI * 2 / numberOfLasers;
-            Vector3 laserPosition = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * radius;
+            Vector3 laserPosition = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * laserSpawnRadius;
 
             // Instantiate the laser and set its position and parent
             GameObject laser = Instantiate(laserPrefab, transform.position + laserPosition, Quaternion.identity);
@@ -120,7 +123,10 @@ public class DefenseSystem : MonoBehaviour
         {
             yield return new WaitForSeconds(GameManager.Instance.mineSpawnInterval);
             for (int i = 0; i < GameManager.Instance.numberOfMinesCount; i++)
+            {
+                yield return new WaitForSeconds(0.05f);
                 SpawnMine();
+            }
         }
     }
 
@@ -128,7 +134,6 @@ public class DefenseSystem : MonoBehaviour
     {
         // Instantiate the mine at the defense system's position
         GameObject mine = Instantiate(minePrefab, transform.position, Quaternion.identity);
-        mine.transform.SetParent(transform);
     }
 
     public void SpawnBlasters(int numberOfBlasters)
@@ -144,8 +149,7 @@ public class DefenseSystem : MonoBehaviour
         {
             // Calculate the angle for each blaster
             float angle = numberOfBlasters == 1 ? 0 : Mathf.Lerp(-45f, 45f, (float)i / (numberOfBlasters - 1));
-            float radius = 1;
-            Vector3 blasterPosition = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0) * radius;
+            Vector3 blasterPosition = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0) * blasterSpawnRadius;
 
             // Instantiate the blaster and set its position and parent
             GameObject blaster = Instantiate(blasterPrefab, transform.position + blasterPosition, Quaternion.identity);

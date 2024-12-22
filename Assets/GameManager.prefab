@@ -64,9 +64,12 @@ MonoBehaviour:
   turretDetectionRange: 1
   turretFireRate: 0.3
   turretDamage: 1
+  turretBulletSpeed: 5
   blasterCount: 1
   blasterFireRate: 0.7
   blasterDamage: 2
+  bulletInaccuracy: 5
+  blasterBulletSpeed: 5
   rigRotationSpeed: 5
   numberOfMinesCount: 0
   mineSpawnInterval: 4

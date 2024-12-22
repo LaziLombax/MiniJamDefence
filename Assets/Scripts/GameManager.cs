@@ -30,11 +30,14 @@ public class GameManager : MonoBehaviour
     public float turretDetectionRange = 1f;
     public float turretFireRate = 1f;
     public float turretDamage = 1f; // Damage dealt by the turret
+    public float turretBulletSpeed = 5f;
 
     [Header("Blaster Variables")]
     public int blasterCount = 1; // Fire rate of the blaster
     public float blasterFireRate = 1f; // Fire rate of the blaster
     public float blasterDamage = 2f; // Damage of the blaster
+    public float bulletInaccuracy = 5f; // Inaccuracy of the blaster bullets
+    public float blasterBulletSpeed = 5f;
 
     [Header("Defence Rig Variables")]
     public float rigRotationSpeed = 5f; // Speed at which the defence rig rotates towards the mouse 
@@ -185,7 +188,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Unlocked First Laser");
         laserCount++;
-        defenceSystem.SpawnLasers(laserCount, 1);
+        defenceSystem.SpawnLasers(laserCount);
     }
 
     public void FirstTurret()
@@ -206,7 +209,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Added Laser");
         laserCount++;
-        defenceSystem.SpawnLasers(laserCount, 1);
+        defenceSystem.SpawnLasers(laserCount);
     }
 
     public void addLaser2()

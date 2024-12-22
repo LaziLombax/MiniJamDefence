@@ -45,7 +45,7 @@ public class Asteroid : MonoBehaviour
         {
             gameObject.tag = "Collectable";
             SpriteRenderer.color = pickUpColour;
-            transform.localScale = new Vector3(collectableSize / 0.8f, collectableSize / 0.8f, collectableSize / 0.8f);
+            transform.localScale = new Vector3(collectableSize / 1.2f, collectableSize / 1.2f, collectableSize / 1.2f);
         }
     }
 
@@ -65,16 +65,8 @@ public class Asteroid : MonoBehaviour
 
     public void DestroyAsteroid()
     {
-        if (transform.localScale.x > collectableSize) // Check if the asteroid is larger than the collectable size
-        {
-            SplitAsteroid();
-            Destroy(gameObject);
-        }
-        else
-        {
-            // Make the asteroid collectable
-            gameObject.tag = "Collectable";
-        }
+        SplitAsteroid();
+        Destroy(gameObject);
     }
 
     private void SplitAsteroid()
@@ -175,7 +167,7 @@ public class Asteroid : MonoBehaviour
     }
     public void BreakVFX(bool isDestoryed)
     {
-        if(isDestoryed)
+        if (isDestoryed)
         {
             breakVFX.SetFloat("Amount", 15f);
         }
