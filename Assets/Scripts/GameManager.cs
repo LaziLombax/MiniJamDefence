@@ -159,31 +159,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("Upgraded Bullet Damage 3");
         blasterDamage += 2;
     }
-
-    public void BlasterFireRateIncrease1()
-    {
-        Debug.Log("Increased Blaster Fire Rate 1");
-        blasterFireRate += 0.5f;
-    }
-
-    public void BlasterFireRateIncrease2()
-    {
-        Debug.Log("Increased Blaster Fire Rate 2");
-        blasterFireRate += 0.75f;
-    }
-
-    public void BlasterFireRateIncrease3()
-    {
-        Debug.Log("Increased Blaster Fire Rate 3");
-        blasterFireRate += 1f;
-    }
-
-    public void BlasterFireRateIncrease4()
-    {
-        Debug.Log("Increased Blaster Fire Rate 4");
-        blasterFireRate += 1.25f;
-    }
-
     public void FirstLaser()
     {
         Debug.Log("Unlocked First Laser");
@@ -326,18 +301,42 @@ public class GameManager : MonoBehaviour
         Debug.Log("Increased Turret Damage 2");
         turretDamage += 1.5f;
     }
+    public void BlasterFireRateIncrease1()
+    {
+        Debug.Log("Increased Blaster Fire Rate 1");
+        blasterFireRate = Mathf.Max(0.1f, blasterFireRate - 0.5f); // Ensure fire rate doesn't go below a certain threshold
+    }
+
+    public void BlasterFireRateIncrease2()
+    {
+        Debug.Log("Increased Blaster Fire Rate 2");
+        blasterFireRate = Mathf.Max(0.1f, blasterFireRate - 0.75f);
+    }
+
+    public void BlasterFireRateIncrease3()
+    {
+        Debug.Log("Increased Blaster Fire Rate 3");
+        blasterFireRate = Mathf.Max(0.1f, blasterFireRate - 1f);
+    }
+
+    public void BlasterFireRateIncrease4()
+    {
+        Debug.Log("Increased Blaster Fire Rate 4");
+        blasterFireRate = Mathf.Max(0.1f, blasterFireRate - 1.25f);
+    }
 
     public void TurretFireRateIncrease1()
     {
         Debug.Log("Increased Turret Fire Rate 1");
-        turretFireRate += 0.5f;
+        turretFireRate = Mathf.Max(0.1f, turretFireRate - 0.5f);
     }
 
     public void TurretFireRateIncrease2()
     {
         Debug.Log("Increased Turret Fire Rate 2");
-        turretFireRate += 0.75f;
+        turretFireRate = Mathf.Max(0.1f, turretFireRate - 0.75f);
     }
+
 
     public void TurretSpeedIncrease1()
     {
