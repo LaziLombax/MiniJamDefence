@@ -133,12 +133,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355fb5f181676484ea3cf6e4b1fcb562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserRange: 10
-  heatPerShot: 10
-  maxHeat: 100
-  heatDissipationRate: 5
+  laserRange: 3
+  heatPerShot: 2
+  maxHeat: 3
+  heatDissipationRate: 1
   laserDamage: 1
   lineRenderer: {fileID: 2167788267366679158}
+  currentHeat: 0
 --- !u!120 &2167788267366679158
 LineRenderer:
   serializedVersion: 2
@@ -189,7 +190,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.2
     widthCurve:
       serializedVersion: 2
       m_Curve:

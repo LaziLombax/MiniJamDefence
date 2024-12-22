@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OrbittingTurret : MonoBehaviour
+public class Turret : MonoBehaviour
 {
     public Transform earth;
     public float orbitRadius = 5f;
@@ -8,6 +8,8 @@ public class OrbittingTurret : MonoBehaviour
     public float detectionRange = 10f;
     public GameObject bulletPrefab;
     public float fireRate = 1f;
+    public int turretIndex = 0; // Index of this turret
+    public int totalTurrets = 1; // Total number of turrets
 
     private float nextFireTime = 0f;
     private float angle = 0f;
@@ -19,7 +21,7 @@ public class OrbittingTurret : MonoBehaviour
             earth = GameObject.FindGameObjectWithTag("Earth").transform;
         }
 
-        // Initialize the turret's position based on the orbit radius
+        // Initialize the turret's position based on the orbit radius and index
         UpdatePosition();
     }
 
@@ -48,19 +50,24 @@ public class OrbittingTurret : MonoBehaviour
 
     void UpdatePosition()
     {
-        float radians = angle * Mathf.Deg2Rad;
-        float x = earth.position.x + orbitRadius * Mathf.Cos(radians);
-        float y = earth.position.y + orbitRadius * Mathf.Sin(radians);
+        // Calculate the angle offset based on the turret index and total number of turrets
+        float angleOffset = (360f / totalTurrets) * turretIndex;
+        float radians = (angle + angleOffset) * Mathf.Deg2Rad;
+        float x = earth.position.x + GameManager.Instance.turretRadius * Mathf.Cos(radians);
+        float y = earth.position.y + GameManager.Instance.turretRadius * Mathf.Sin(radians);
         transform.position = new Vector3(x, y, transform.position.z);
     }
 
     void FireBullet(Transform target)
     {
-        //GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        //Bullet bulletScript = bullet.GetComponent<Bullet>();
-        //if (bulletScript != null)
-        //{
-        //    bulletScript.SetTarget(target);
-        //}
+        Vector3 direction = (target.position - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, rotation);
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        if (bulletScript != null)
+        {
+            bulletScript.bulletType = BulletType.Turret;
+        }
     }
 }

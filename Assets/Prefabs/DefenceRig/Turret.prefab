@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 549549479608793379}
   - component: {fileID: 9192035693139293218}
   m_Layer: 0
-  m_Name: Torrent
+  m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

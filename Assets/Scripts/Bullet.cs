@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 5f; // Speed of the projectile
     public float inaccuracy = 5f;             // Amount of random spread (in degrees)
     private Vector3 shootDirection;
+    public BulletType bulletType = BulletType.Basic;
 
     private void Start()
     {
@@ -27,4 +28,12 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+}
+
+
+public enum BulletType
+{
+    Basic,
+    Turret,
+    Explosive
 }

@@ -15,6 +15,15 @@ public class GameManager : MonoBehaviour
 
     public float bulletDamageMultiplier = 1f;
 
+    [Header("Turret Variables")]
+    public float turretRadius = 5f; // Radius of the turret orbit around the earth
+
+    [Header("Blaster Variables")]
+    public float blasterFireRate = 1f; // Fire rate of the blaster
+    public float blasterDamage = 10f; // Damage of the blaster
+
+    [Header("Defence Rig Variables")]
+    public float rigRotationSpeed = 5f; // Speed at which the defence rig rotates towards the mouse
 
     void Awake()
     {

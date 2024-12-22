@@ -12,9 +12,21 @@ public class LaserWeapon : MonoBehaviour
     public float currentHeat = 0f;
     private bool isCoolingDown = false;
 
+    void Start()
+    {
+        if (lineRenderer == null)
+        {
+            lineRenderer = GetComponent<LineRenderer>();
+            if (lineRenderer == null)
+            {
+                Debug.LogError("LineRenderer component missing from the laser prefab.");
+            }
+        }
+    }
+
     void Update()
     {
-        if (Input.GetMouseButton(0) && !isCoolingDown)
+        if (!isCoolingDown)
         {
             ShootLaser();
         }
@@ -24,7 +36,7 @@ public class LaserWeapon : MonoBehaviour
         }
 
         // Dissipate heat over time
-        if (currentHeat > 0)
+        if (currentHeat > 0 && !lineRenderer.enabled )
         {
             currentHeat -= heatDissipationRate * Time.deltaTime;
             if (currentHeat < 0)
@@ -46,43 +58,50 @@ public class LaserWeapon : MonoBehaviour
 
     void ShootLaser()
     {
-        if (currentHeat + heatPerShot <= maxHeat)
+        currentHeat += heatPerShot * Time.deltaTime;
+
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.right, laserRange);
+        bool hitAsteroid = false;
+
+        foreach (RaycastHit2D hit in hits)
         {
-            currentHeat += heatPerShot * Time.deltaTime;
-
-            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.right, laserRange);
-            foreach (RaycastHit2D hit in hits)
+            if (hit.collider != null && hit.collider.CompareTag("Asteroid"))
             {
-                if (hit.collider != null && hit.collider.CompareTag("Asteroid"))
+                Asteroid asteroid = hit.collider.GetComponent<Asteroid>();
+                if (asteroid != null)
                 {
-                    Asteroid asteroid = hit.collider.GetComponent<Asteroid>();
-                    if (asteroid != null)
-                    {
-                        asteroid.TakeDamage(laserDamage, WeaponType.Laser, 0.02f);
-                    }
+                    asteroid.TakeDamage(laserDamage, WeaponType.Laser, 0.02f);
+                }
 
-                    // Draw the laser line
-                    DrawLaser(transform.position, hit.point);
-                }
-                else
-                {
-                    // Draw the laser line to the maximum range
-                    DrawLaser(transform.position, transform.position + transform.right * laserRange);
-                }
+                // Draw the laser line
+                DrawLaser(transform.position, hit.point);
+                hitAsteroid = true;
+                break;
             }
+        }
+
+        if (!hitAsteroid)
+        {
+            // Draw the laser line to the maximum range
+            DrawLaser(transform.position, transform.position + transform.right * laserRange);
         }
     }
 
     void DrawLaser(Vector3 start, Vector3 end)
     {
-        lineRenderer.SetPosition(0, start);
-        lineRenderer.SetPosition(1, end);
-        lineRenderer.enabled = true;
-
+        if (lineRenderer != null)
+        {
+            lineRenderer.SetPosition(0, start);
+            lineRenderer.SetPosition(1, end);
+            lineRenderer.enabled = true;
+        }
     }
 
     void DisableLaser()
     {
-        lineRenderer.enabled = false;
+        if (lineRenderer != null)
+        {
+            lineRenderer.enabled = false;
+        }
     }
 }
