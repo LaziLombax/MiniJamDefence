@@ -48,4 +48,9 @@ public class InputHandler : MonoBehaviour
     {
         return inputActions.UI.MainMenu.triggered;
     }
+
+    public bool TestL()
+    {
+        return inputActions.Player.PressL.triggered;
+    }
 }

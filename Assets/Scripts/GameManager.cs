@@ -81,6 +81,12 @@ public class GameManager : MonoBehaviour
 
     private UpgradeMethod[] availableUpgrades;
 
+    private void Update()
+    {
+        if (InputHandler.Instance.TestL())
+            UIHandler.UpgradeMenu();
+    }
+
     void Awake()
     {
         // Implement singleton pattern
