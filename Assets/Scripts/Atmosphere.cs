@@ -9,6 +9,7 @@ public class Atmosphere : MonoBehaviour
         if (other.CompareTag("Collectable"))
         {
             // Destroy the collectable asteroid after a short delay
+            GameManager.Instance.AddResources(3);
             Destroy(other.gameObject, destroyDelay);
         }
         else

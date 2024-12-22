@@ -3,9 +3,6 @@ using UnityEngine;
 public class AstroidBlaster : MonoBehaviour
 {
     public GameObject projectilePrefab;  // The projectile prefab to be fired
-    public float fireRate = 1.0f;       // Rate at which projectiles are fired (in seconds)
-    public float projectileSpeed = 10f; // Speed of the projectile
-    public float inaccuracy = 5f;       // Amount of random spread (in degrees)
 
     private float nextFireTime;
     private InputHandler playerInput;
@@ -22,7 +19,7 @@ public class AstroidBlaster : MonoBehaviour
         {
             Debug.Log("Shot");
             FireProjectile();
-            nextFireTime = Time.time + fireRate;
+            nextFireTime = Time.time + GameManager.Instance.blasterFireRate;
         }
     }
 
