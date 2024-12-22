@@ -12,7 +12,7 @@ public class AstroidBlaster : MonoBehaviour
 
     private void Start()
     {
-        playerInput = GameManager.Instance.InputHandler;
+        playerInput = InputHandler.Instance;
     }
 
     void Update()

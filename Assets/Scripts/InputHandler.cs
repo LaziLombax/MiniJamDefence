@@ -41,7 +41,7 @@ public class InputHandler : MonoBehaviour
     }
     public bool ShootInput()
     {
-        return inputActions.Player.Attack.triggered;
+        return inputActions.Player.Attack.ReadValue<float>() > 0;
     }
 
     public bool MainMenu()
