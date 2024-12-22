@@ -107,11 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  rotationSpeed: 2
   laserPrefab: {fileID: 5628841932623607411, guid: 7c22e65e53402e847b469cbfb3a2cb06, type: 3}
   turretPrefab: {fileID: 8848855967751956961, guid: 75a75a1ae8da7154ba520500190e1a9a, type: 3}
   minePrefab: {fileID: 1319707838114356085, guid: 8b2f9f224c58c4349b13c5247845b7ea, type: 3}
-  mineSpawnInterval: 5
+  blasterPrefab: {fileID: 8136901931179760164, guid: cb2075d201efcdb42889a6a187a235ae, type: 3}
 --- !u!1 &360792881159798300
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,19 +27,22 @@ public class GameManager : MonoBehaviour
 
     [Header("Turret Variables")]
     public int turretCount = 0;
-    public float orbitRadius = 5f;
+    public float orbitRadius = 2f;
     public float orbitSpeed = 5f;
-    public float turretDetectionRange = 10f;
+    public float turretDetectionRange = 1f;
     public float turretFireRate = 1f;
     public float turretRadius = 3f; // Radius of the turret orbit around the earth
 
 
     [Header("Blaster Variables")]
+    public int blasterCount = 1; // Fire rate of the blaster
     public float blasterFireRate = 1f; // Fire rate of the blaster
     public float blasterDamage = 10f; // Damage of the blaster
 
     [Header("Defence Rig Variables")]
-    public float rigRotationSpeed = 5f; // Speed at which the defence rig rotates towards the mouse
+    public float rigRotationSpeed = 5f; // Speed at which the defence rig rotates towards the mouse 
+    public int numberOfMinesCount = 0;
+    public float mineSpawnInterval = 4f;
 
     private List<UpgradeMethod> obtainedUpgrades = new List<UpgradeMethod>();
 
@@ -248,6 +251,32 @@ public class GameManager : MonoBehaviour
         Debug.Log("Increased Blaster Fire Rate");
         blasterFireRate += 0.5f;
     }
+    public void addBlaster1()
+    {
+        Debug.Log("Added Blaster");
+        blasterCount++;
+        defenceSystem.SpawnBlasters(blasterCount);
+    }
+
+    public void addBlaster2()
+    {
+        addBlaster1();
+    }
+
+    public void addBlaster3()
+    {
+        addBlaster1();
+    }
+
+    public void addBlaster4()
+    {
+        addBlaster1();
+    }
+
+    public void addBlaster5()
+    {
+        addBlaster1();
+    }
 
     public UpgradeMethod[] GetAvailableUpgrades()
     {
@@ -283,6 +312,13 @@ public enum UpgradeMethod
     addTurret3,
     addTurret4,
     addTurret5,
+
+    // Blaster Upgrades
+    addBlaster1,
+    addBlaster2,
+    addBlaster3,
+    addBlaster4,
+    addBlaster5,
 
     BulletDamageIncrease1,
     BulletDamageIncrease2,
