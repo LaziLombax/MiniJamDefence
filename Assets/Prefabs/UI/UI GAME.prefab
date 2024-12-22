@@ -534,71 +534,6 @@ Transform:
   - {fileID: 793993424794291147}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8728209630211113230
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 793993424794291147}
-  - component: {fileID: 6458171756831640117}
-  m_Layer: 0
-  m_Name: UIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &793993424794291147
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8728209630211113230}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7054806678770445280}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6458171756831640117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8728209630211113230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23c66a5a5d3127a42979784539ec52ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenuPanel: {fileID: 0}
-  HUDPanel: {fileID: 0}
-  gameOverPanel: {fileID: 0}
-  blackScreen: {fileID: 4378819910797180436}
-  mineralBar: {fileID: 6174728172898788642}
-  currentTimer: 0
-  timerText: {fileID: 4729053178761474754}
-  playButton: {fileID: 0}
-  settingsButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  upgradeMenu: {fileID: 3898443321810233110}
-  upgradeCards:
-  - {fileID: 6353064443961667643}
-  - {fileID: 5138686501815152269}
-  upgradeUIInfomation:
-  - methodKey: 0
-    info: Bullet Damage
-    icon: {fileID: 2208703988740019828, guid: 5e51c36d8fedf1244b268236c6b96c6e, type: 3}
-  - methodKey: 1
-    info: Blaster Fire Rate
-    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
 --- !u!1001 &628912887397209345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -712,6 +647,92 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5908582736823238750, guid: 0f4a5c21b567fbe479149db8a2da37e7, type: 3}
   m_PrefabInstance: {fileID: 628912887397209345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1024707136693961572
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7054806678770445280}
+    m_Modifications:
+    - target: {fileID: 377362724741417135, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377362724741417135, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377362724741417135, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377362724741417135, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 377362724741417135, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377362724741417135, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377362724741417135, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377362724741417135, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377362724741417135, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377362724741417135, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311923833231804753, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 4729053178761474754}
+    - target: {fileID: 6311923833231804753, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: mineralBar
+      value: 
+      objectReference: {fileID: 6174728172898788642}
+    - target: {fileID: 6311923833231804753, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: blackScreen
+      value: 
+      objectReference: {fileID: 4378819910797180436}
+    - target: {fileID: 6311923833231804753, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: upgradeMenu
+      value: 
+      objectReference: {fileID: 3898443321810233110}
+    - target: {fileID: 6311923833231804753, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: 'upgradeCards.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6353064443961667643}
+    - target: {fileID: 6311923833231804753, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: 'upgradeCards.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5138686501815152269}
+    - target: {fileID: 8581795852657558122, guid: 927418345306eb943b74b15894920991, type: 3}
+      propertyPath: m_Name
+      value: UIManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 927418345306eb943b74b15894920991, type: 3}
+--- !u!4 &793993424794291147 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 377362724741417135, guid: 927418345306eb943b74b15894920991, type: 3}
+  m_PrefabInstance: {fileID: 1024707136693961572}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1733113808700398754
 PrefabInstance:

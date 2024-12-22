@@ -433,6 +433,554 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.size
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[0].info
+      value: New Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[1].info
+      value: New Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[2].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[2].info
+      value: New Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[3].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[3].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[4].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[4].info
+      value: +  1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[5].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[5].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[6].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[6].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[7].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[7].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[8].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[8].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[9].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[9].info
+      value: More Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[10].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[10].info
+      value: More Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[11].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[11].info
+      value: + Recharge
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[12].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[12].info
+      value: + Recharge
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[13].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[13].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[14].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[14].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[15].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[15].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[16].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[16].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[17].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[17].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[18].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[18].info
+      value: More Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[19].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[19].info
+      value: More Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[20].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[20].info
+      value: + Fire Rate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[21].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[21].info
+      value: + Fire Rate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[22].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[22].info
+      value: + Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[23].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[23].info
+      value: + speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[24].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[24].info
+      value: + Radius
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[25].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[25].info
+      value: + Radius
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[26].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[26].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[27].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[27].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[28].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[28].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[29].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[29].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[30].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[30].info
+      value: + 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[31].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[31].info
+      value: More Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[32].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[32].info
+      value: + Fire Rate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[33].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[33].info
+      value: + Fire Rate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[34].icon
+      value: 
+      objectReference: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[34].info
+      value: + Fire Rate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[2].methodKey
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[3].methodKey
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[4].methodKey
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[5].methodKey
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[6].methodKey
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[7].methodKey
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[8].methodKey
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[9].methodKey
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[0].weaponName
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[10].methodKey
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[11].methodKey
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[12].methodKey
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[13].methodKey
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[14].methodKey
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[15].methodKey
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[16].methodKey
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[17].methodKey
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[18].methodKey
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[19].methodKey
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[1].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[20].methodKey
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[21].methodKey
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[22].methodKey
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[23].methodKey
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[24].methodKey
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[25].methodKey
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[26].methodKey
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[27].methodKey
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[28].methodKey
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[29].methodKey
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[2].weaponName
+      value: Blaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[30].methodKey
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[31].methodKey
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[32].methodKey
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[33].methodKey
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[34].methodKey
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[3].weaponName
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[4].weaponName
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[5].weaponName
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[6].weaponName
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[7].weaponName
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[8].weaponName
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[9].weaponName
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[10].weaponName
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[11].weaponName
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[12].weaponName
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[13].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[14].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[15].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[16].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[17].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[18].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[19].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[20].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[21].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[22].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[23].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[24].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[25].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[26].weaponName
+      value: Blaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[27].weaponName
+      value: Blaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[28].weaponName
+      value: Blaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[29].weaponName
+      value: Blaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[30].weaponName
+      value: Blaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[31].weaponName
+      value: Blaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[32].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[33].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458171756831640117, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: upgradeUIInfomation.Array.data[34].weaponName
+      value: Turret
+      objectReference: {fileID: 0}
     - target: {fileID: 7054806678770445280, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

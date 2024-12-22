@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class UpgradeCard : MonoBehaviour
 {
-    public string weapon;
     public TextMeshProUGUI title;
     public TextMeshProUGUI upgradeName;
     public Image upgradeIconRenderer;
@@ -15,7 +14,7 @@ public class UpgradeCard : MonoBehaviour
     {
         upgradeIconRenderer.sprite = infoToUse.icon;
         upgradeName.text = infoToUse.info;
-        title.text = weapon;
+        title.text = infoToUse.weaponName;
         confirmUpgrade.onClick.RemoveAllListeners();
         confirmUpgrade.onClick.AddListener(GameManager.Instance.UIHandler.ConfirmFade);
         confirmUpgrade.onClick.AddListener(delegate { GameManager.Instance.Upgrade(upgradeMethod);});
