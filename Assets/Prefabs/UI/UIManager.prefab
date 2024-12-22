@@ -1,0 +1,213 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8581795852657558122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 377362724741417135}
+  - component: {fileID: 6311923833231804753}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &377362724741417135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8581795852657558122}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6311923833231804753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8581795852657558122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c66a5a5d3127a42979784539ec52ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuPanel: {fileID: 0}
+  HUDPanel: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  blackScreen: {fileID: 0}
+  mineralBar: {fileID: 0}
+  currentTimer: 0
+  timerText: {fileID: 0}
+  playButton: {fileID: 0}
+  settingsButton: {fileID: 0}
+  quitButton: {fileID: 0}
+  upgradeMenu: {fileID: 0}
+  upgradeCards:
+  - {fileID: 0}
+  - {fileID: 0}
+  upgradeUIInfomation:
+  - methodKey: 0
+    weaponName: Laser
+    info: New Weapon
+    icon: {fileID: 2208703988740019828, guid: 5e51c36d8fedf1244b268236c6b96c6e, type: 3}
+  - methodKey: 1
+    weaponName: Turret
+    info: New Weapon
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 2
+    weaponName: Blaster
+    info: New Weapon
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 3
+    weaponName: Laser
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 4
+    weaponName: Laser
+    info: +  1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 5
+    weaponName: Laser
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 6
+    weaponName: Laser
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 7
+    weaponName: Laser
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 8
+    weaponName: Laser
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 9
+    weaponName: Laser
+    info: More Damage
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 10
+    weaponName: Laser
+    info: More Damage
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 13
+    weaponName: Laser
+    info: + Recharge
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 14
+    weaponName: Laser
+    info: + Recharge
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 15
+    weaponName: Turret
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 16
+    weaponName: Turret
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 17
+    weaponName: Turret
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 18
+    weaponName: Turret
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 19
+    weaponName: Turret
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 20
+    weaponName: Turret
+    info: More Damage
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 21
+    weaponName: Turret
+    info: More Damage
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 22
+    weaponName: Turret
+    info: + Fire Rate
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 23
+    weaponName: Turret
+    info: + Fire Rate
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 24
+    weaponName: Turret
+    info: + Speed
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 25
+    weaponName: Turret
+    info: + speed
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 26
+    weaponName: Turret
+    info: + Radius
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 27
+    weaponName: Turret
+    info: + Radius
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 28
+    weaponName: Blaster
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 29
+    weaponName: Blaster
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 30
+    weaponName: Blaster
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 31
+    weaponName: Blaster
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 32
+    weaponName: Blaster
+    info: + 1
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 33
+    weaponName: Blaster
+    info: More Damage
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 34
+    weaponName: Blaster
+    info: More Damage
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 35
+    weaponName: Blaster
+    info: More Damage
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 36
+    weaponName: Blaster
+    info: + Fire Rate
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 37
+    weaponName: Blaster
+    info: + Fire Rate
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 38
+    weaponName: Blaster
+    info: + Fire Rate
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
+  - methodKey: 39
+    weaponName: Blaster
+    info: + Fire Rate
+    icon: {fileID: 4641904484547189089, guid: e51b605adf540214d91761016faed5aa, type: 3}
