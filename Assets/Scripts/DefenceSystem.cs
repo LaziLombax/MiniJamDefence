@@ -1,15 +1,21 @@
 using UnityEngine;
+using System.Collections;
 
 public class DefenseSystem : MonoBehaviour
 {
     public int health = 10; // Health of the defense system
-    public float rotationSpeed = 5f; // Speed at which the defense system rotates towards the mouse
+    public GameObject laserPrefab; // Prefab of the laser to spawn
+    public GameObject turretPrefab; // Prefab of the turret to spawn
+    public GameObject minePrefab; // Prefab of the mine to spawn
+    public GameObject blasterPrefab; // Prefab of the blaster to spawn
 
     private Camera mainCamera;
 
     void Start()
     {
         mainCamera = Camera.main;
+        SpawnBlasters(1);
+        StartCoroutine(SpawnMinesPeriodically());
     }
 
     void Update()
@@ -25,7 +31,7 @@ public class DefenseSystem : MonoBehaviour
         Vector3 direction = mousePosition - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, GameManager.Instance.rigRotationSpeed * Time.deltaTime);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -49,5 +55,109 @@ public class DefenseSystem : MonoBehaviour
     {
         // Add destruction effects or logic here
         Destroy(gameObject);
+    }
+
+    public void SpawnLasers(int numberOfLasers, float radius)
+    {
+        DestroyExistingLasers();
+        for (int i = 0; i < numberOfLasers; i++)
+        {
+            // Calculate the angle for each laser
+            float angle = i * Mathf.PI * 2 / numberOfLasers;
+            Vector3 laserPosition = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * radius;
+
+            // Instantiate the laser and set its position and parent
+            GameObject laser = Instantiate(laserPrefab, transform.position + laserPosition, Quaternion.identity);
+            laser.transform.SetParent(transform);
+
+            // Point the laser away from the center
+            float angleDegrees = angle * Mathf.Rad2Deg;
+            laser.transform.rotation = Quaternion.AngleAxis(angleDegrees, Vector3.forward);
+        }
+    }
+
+    void DestroyExistingLasers()
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.gameObject.CompareTag("Laser"))
+            {
+                Destroy(child.gameObject);
+            }
+        }
+    }
+
+    public void SpawnTurrets(int numberOfTurrets)
+    {
+        DestroyExistingTurrets();
+        for (int i = 0; i < numberOfTurrets; i++)
+        {
+            GameObject turret = Instantiate(turretPrefab, transform.position, Quaternion.identity);
+            Turret turretScript = turret.GetComponent<Turret>();
+            if (turretScript != null)
+            {
+                turretScript.turretIndex = i;
+                turretScript.totalTurrets = numberOfTurrets;
+            }
+            turret.transform.SetParent(transform);
+        }
+    }
+
+    void DestroyExistingTurrets()
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.gameObject.CompareTag("Turret"))
+            {
+                Destroy(child.gameObject);
+            }
+        }
+    }
+
+    IEnumerator SpawnMinesPeriodically()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(GameManager.Instance.mineSpawnInterval);
+            for (int i = 0; i < GameManager.Instance.numberOfMinesCount; i++)
+                SpawnMine();
+        }
+    }
+
+    void SpawnMine()
+    {
+        // Instantiate the mine at the defense system's position
+        GameObject mine = Instantiate(minePrefab, transform.position, Quaternion.identity);
+        mine.transform.SetParent(transform);
+    }
+
+    public void SpawnBlasters(int numberOfBlasters)
+    {
+        DestroyExistingBlasters();
+        for (int i = 0; i < numberOfBlasters; i++)
+        {
+            // Calculate the angle for each blaster
+            float angle = Mathf.Lerp(-45f, 45f, (float)i / (numberOfBlasters - 1));
+            float radius = 1;
+            Vector3 blasterPosition = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0) * radius;
+
+            // Instantiate the blaster and set its position and parent
+            GameObject blaster = Instantiate(blasterPrefab, transform.position + blasterPosition, Quaternion.identity);
+            blaster.transform.SetParent(transform);
+
+            // Point the blaster away from the center
+            blaster.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+    }
+
+    void DestroyExistingBlasters()
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.gameObject.CompareTag("Blaster"))
+            {
+                Destroy(child.gameObject);
+            }
+        }
     }
 }

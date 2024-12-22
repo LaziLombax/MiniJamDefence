@@ -234,6 +234,7 @@ public class UIHandler : MonoBehaviour
 public class UpgradeInfo
 {
     public UpgradeMethod methodKey;
+    [TextArea]
     public string info;
     public Sprite icon;
 

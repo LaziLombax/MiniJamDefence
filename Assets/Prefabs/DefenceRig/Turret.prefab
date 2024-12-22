@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 549549479608793379}
   - component: {fileID: 9192035693139293218}
   m_Layer: 0
-  m_Name: Torrent
+  m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,11 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   earth: {fileID: 0}
-  orbitRadius: 5
-  orbitSpeed: 15
-  detectionRange: 10
-  bulletPrefab: {fileID: 0}
-  fireRate: 1
+  bulletPrefab: {fileID: 756869361131378614, guid: a7e47f0ca44b0604fb772cec24bd268e, type: 3}
+  turretIndex: 0
+  totalTurrets: 1
 --- !u!212 &9192035693139293218
 SpriteRenderer:
   m_ObjectHideFlags: 0
