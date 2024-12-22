@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            InputHandler = gameObject.AddComponent<InputHandler>();
+            InputHandler = InputHandler.Instance;
         }
         else
         {

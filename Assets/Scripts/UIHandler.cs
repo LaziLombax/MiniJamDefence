@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 using System.Xml.Linq;
+using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class UIHandler : MonoBehaviour
     public CanvasGroup HUDPanel;
     //public GameObject settingsPanel;
     public CanvasGroup gameOverPanel;
-
+    public CanvasGroup blackScreen;
     [Header("HUD")]
     public Slider mineralBar;
     public float currentTimer;
@@ -24,39 +25,37 @@ public class UIHandler : MonoBehaviour
     public Button playButton;
     public Button settingsButton;
     public Button quitButton;
-    bool inGame;
 
     private InputHandler playerInput;
     private GameManager gameManager;
     private void Start()
     {
         // Initialize button listeners
-        playButton.onClick.AddListener(delegate { ChangeUI("OnPlayButtonClicked", 0f); });
-        playButton.onClick.AddListener(ConfirmFade);
-        //settingsButton.onClick.AddListener(OnSettingsButtonClicked);
-        //quitButton.onClick.AddListener(OnQuitButtonClicked);
-        // Initialize PlayerInput
-        gameManager = GameManager.Instance;
-        playerInput = gameManager.InputHandler;
-        gameManager.UIHandler = this;
-        UpdateResourceBar(gameManager.currentResourcesNeeded, gameManager.resources);
-        ShowMainMenu();
-        // Show the main menu at the start
-        //ShowMainMenu();
+        if (playButton != null)
+        {
+            playButton.onClick.AddListener(delegate { ChangeUI("OnPlayButtonClicked", 0f); });
+            playButton.onClick.AddListener(ConfirmFade);
+        }
+        else
+        {
+            gameManager = GameManager.Instance;
+            gameManager.UIHandler = this;
+            UpdateResourceBar(gameManager.currentResourcesNeeded, gameManager.resources);
+            StartCoroutine(FadeOutBlack());
+        }
+        playerInput = InputHandler.Instance;
     }
     private void Update()
     {
         // Increase time as the game runs
-        if (inGame)
+        if (SceneManager.GetActiveScene().name == "Test")
         {
             if (playerInput.MainMenu())
                 ChangeUI("ShowMainMenu", 0f);
             currentTimer += Time.deltaTime;
             currentTimer = Mathf.Max(currentTimer, 0); // Clamp to avoid negative time
+            timerText.text = FormatTime(currentTimer);
         }
-
-        // Update the timer text
-        timerText.text = FormatTime(currentTimer);
     }
     private string FormatTime(float time)
     {
@@ -71,26 +70,22 @@ public class UIHandler : MonoBehaviour
     }
     public void ShowMainMenu()
     {
-        inGame = false;
         Time.timeScale = 0f;
-        HUDPanel.alpha = 0f;
-        FadeOutCanvasGroupOnClick(mainMenuPanel);
+        StartCoroutine(FadeInBlack("MainMenu")); ;
     }
     public void ShowGameOver()
     {
-        inGame = false;
-        Time.timeScale = 0f;
-        HUDPanel.alpha = 0f;
-        FadeOutCanvasGroupOnClick(gameOverPanel);
+        StartCoroutine(FadeInBlack("GameOver"));
     }
 
     private void OnPlayButtonClicked()
     {
-        inGame = true;
-        Time.timeScale = 1f;
-        HUDPanel.alpha = 1f;
+        StartCoroutine(FadeInBlack("Test"));
     }
 
+    public void LoadSceneWithDelay(string sceneString)
+    {
+    }
 
     //private void OnSettingsButtonClicked()
     //{
@@ -124,20 +119,23 @@ public class UIHandler : MonoBehaviour
         float elapsed = 0f;
         float duration = 0.5f; // Optional fade-out duration for smooth transition
 
-        while (elapsed < duration)
+        if (startAlpha == 0f)
         {
-            elapsed += Time.unscaledDeltaTime;
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, 1, elapsed / duration);
-            yield return null;
-        }
+            while (elapsed < duration)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                canvasGroup.alpha = Mathf.Lerp(startAlpha, 1, elapsed / duration);
+                yield return null;
+            }
 
 
-        canvasGroup.interactable = true;
-        canvasGroup.blocksRaycasts = true;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
 
-        while (!fadeCheck) // Wait for UI click action
-        {
-            yield return null;
+            while (!fadeCheck) // Wait for UI click action
+            {
+                yield return null;
+            }
         }
 
         startAlpha = canvasGroup.alpha;
@@ -156,10 +154,47 @@ public class UIHandler : MonoBehaviour
         fadeCheck = false;
         Time.timeScale = 1;
     }
+    private IEnumerator FadeInBlack(string sceneString)
+    {
+        blackScreen.interactable = true;
+        blackScreen.blocksRaycasts = true;
+
+        float elapsed = 0f;
+        float duration = 0.5f; // Optional fade-out duration for smooth transition
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            blackScreen.alpha = Mathf.Lerp(0, 1, elapsed / duration);
+            yield return null;
+        }
+
+
+        SceneManager.LoadScene(sceneString);
+    }
+    private IEnumerator FadeOutBlack()
+    {
+
+        Time.timeScale = 0;
+        float elapsed = 0f;
+        float duration = 0.5f; // Optional fade-out duration for smooth transition
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            blackScreen.alpha = Mathf.Lerp(1, 0, elapsed / duration);
+            yield return null;
+        }
+
+
+        blackScreen.interactable = true;
+        blackScreen.blocksRaycasts = true;
+        Time.timeScale = 1;
+    }
 
     #region Upgrade UI
     [Header("Upgrade Menu")]
-    
+
     public CanvasGroup upgradeMenu;
     public List<UpgradeCard> upgradeCards = new List<UpgradeCard>();
     public List<UpgradeInfo> upgradeUIInfomation = new List<UpgradeInfo>();

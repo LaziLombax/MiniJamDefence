@@ -2,11 +2,23 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
+    public static InputHandler Instance { get; private set; }
     private InputSystem_Actions inputActions;
 
     // Unity's InputActionAsset for handling input
     private void Awake()
     {
+            // Implement singleton pattern
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        
         inputActions = new InputSystem_Actions();
     }
 
