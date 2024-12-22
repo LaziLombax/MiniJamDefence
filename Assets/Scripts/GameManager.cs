@@ -1,15 +1,20 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     [HideInInspector] public InputHandler InputHandler;
+    [HideInInspector] public UIHandler UIHandler;
 
     public int resources = 0; // Resource count
+    public int baseResourcesNeeded = 5;
+    public int currentResourcesNeeded;
 
     public float health = 100; // Health of the earth
 
     public float bulletDamageMultiplier = 1f;
+
 
     void Awake()
     {
@@ -24,11 +29,21 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        currentResourcesNeeded = baseResourcesNeeded;
     }
     // Method to add resources
     public void AddResources(int amount)
     {
         resources += amount;
+
+        // If the player has the required amount of resources, upgrade
+        if(currentResourcesNeeded <= resources)
+        {
+            resources -= currentResourcesNeeded;
+            currentResourcesNeeded += baseResourcesNeeded;
+            UIHandler.UpgradeMenu();
+        }
+        UIHandler.UpdateResourceBar(currentResourcesNeeded, resources);
         Debug.Log("Resources: " + resources);
     }
 
@@ -51,6 +66,7 @@ public class GameManager : MonoBehaviour
 
     public void BulletDamageIncrease()
     {
+        Debug.Log("Upgraded Bullets");
         bulletDamageMultiplier += 1;
     }
 
@@ -60,5 +76,6 @@ public class GameManager : MonoBehaviour
 public enum UpgradeMethod
 {
     BulletDamageIncrease,
+    BlasterFireRateIncrease,
 
 }

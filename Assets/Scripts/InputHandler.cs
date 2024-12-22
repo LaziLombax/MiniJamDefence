@@ -31,4 +31,9 @@ public class InputHandler : MonoBehaviour
     {
         return inputActions.Player.Attack.triggered;
     }
+
+    public bool MainMenu()
+    {
+        return inputActions.UI.MainMenu.triggered;
+    }
 }

@@ -124,6 +124,7 @@ public class Asteroid : MonoBehaviour
 
         if (Time.time - lastDamageTimes[weaponType] >= cooldownTime)
         {
+            BreakVFX(false);
             health -= damage;
             lastDamageTimes[weaponType] = Time.time;
 
@@ -161,6 +162,7 @@ public class Asteroid : MonoBehaviour
         // Implement the logic for the asteroid explosion
         Debug.Log("Asteroid exploded: " + gameObject.name);
         // Add explosion effects, sound, etc.
+        BreakVFX(true);
         Invoke("Explode", 0.5f);
     }
 
@@ -176,11 +178,10 @@ public class Asteroid : MonoBehaviour
         if(isDestoryed)
         {
             breakVFX.SetFloat("Amount", 15f);
-            Destroy(breakVFX.gameObject, 2f);
         }
         else
         {
-            breakVFX.SetFloat("Amount", 15f);
+            breakVFX.SetFloat("Amount", 5f);
         }
         breakVFX.SendEvent("Break");
     }
