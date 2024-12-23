@@ -61,6 +61,11 @@ public class UIHandler : MonoBehaviour
             currentTimer = Mathf.Max(currentTimer, 0); // Clamp to avoid negative time
             timerText.text = FormatTime(currentTimer);
         }
+        else
+        {
+            if (playerInput.MainMenu())
+                Application.Quit();
+        }
     }
     private string FormatTime(float time)
     {
