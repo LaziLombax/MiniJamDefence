@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8996379465486453564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 501365836214547557}
+  - component: {fileID: 7640139570946516386}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &501365836214547557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8996379465486453564}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.3245912, y: -1.3980873, z: -0.07006854}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7640139570946516386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8996379465486453564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 586d4f1cd5d8bd84280e0ef5e9e15043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSource: {fileID: 0}
+  audioSourcePoolSize: 10
+  laserSounds:
+  - clip: {fileID: 8300000, guid: c770115629bf28f46a7d3c9ebf5b82a4, type: 3}
+    volume: 0.094
+    startTime: 0
+  blasterSounds:
+  - clip: {fileID: 8300000, guid: 3a79f4cb312bd7e48a67c4c41bce8bad, type: 3}
+    volume: 0.547
+    startTime: 0
+  turretSounds:
+  - clip: {fileID: 8300000, guid: a903cb31646c64a449d0cd2596a9919d, type: 3}
+    volume: 1
+    startTime: 0
+  asteroidHitSounds:
+  - clip: {fileID: 8300000, guid: 0b5260762babbb84eb01beecb2e8f86d, type: 3}
+    volume: 0.512
+    startTime: 0
+  - clip: {fileID: 8300000, guid: b0906fa1aea4a1b4397a8dc6e8d88fb6, type: 3}
+    volume: 0.256
+    startTime: 0
