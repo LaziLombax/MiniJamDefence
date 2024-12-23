@@ -10,9 +10,10 @@ public class SoundManager : MonoBehaviour
     public int audioSourcePoolSize = 10; // Number of audio sources in the pool
 
     [Header("Audio Clips")]
-    public AudioClip[] laserSounds;
-    public AudioClip[] blasterSounds;
-    public AudioClip[] asteroidHitSounds;
+    public SoundClip[] laserSounds;
+    public SoundClip[] blasterSounds;
+    public SoundClip[] turretSounds;
+    public SoundClip[] asteroidHitSounds;
     // Add other audio clip arrays here
 
     private List<AudioSource> audioSourcePool;
@@ -59,15 +60,17 @@ public class SoundManager : MonoBehaviour
         return newAudioSource;
     }
 
-    // Play a single sound effect from an array of clips
-    public void PlaySound(AudioClip[] clips, bool loop = false)
+    // Play a single sound effect from an array of SoundClip
+    public void PlaySound(SoundClip[] soundClips, bool loop = false)
     {
-        if (clips.Length == 0) return;
+        if (soundClips.Length == 0) return;
 
-        AudioClip clip = clips[Random.Range(0, clips.Length)];
+        SoundClip soundClip = soundClips[Random.Range(0, soundClips.Length)];
         AudioSource audioSource = GetAvailableAudioSource();
         audioSource.loop = loop;
-        audioSource.clip = clip;
+        audioSource.clip = soundClip.clip;
+        audioSource.volume = soundClip.volume;
+        audioSource.time = soundClip.startTime;
         audioSource.Play();
     }
 
@@ -82,7 +85,7 @@ public class SoundManager : MonoBehaviour
     {
         foreach (AudioSource audioSource in audioSourcePool)
         {
-            if (audioSource.clip != null && System.Array.Exists(laserSounds, clip => clip == audioSource.clip) && audioSource.isPlaying)
+            if (audioSource.clip != null && System.Array.Exists(laserSounds, soundClip => soundClip.clip == audioSource.clip) && audioSource.isPlaying)
             {
                 audioSource.Stop();
                 audioSource.loop = false;
@@ -90,4 +93,13 @@ public class SoundManager : MonoBehaviour
             }
         }
     }
+}
+
+[System.Serializable]
+public class SoundClip
+{
+    public AudioClip clip;
+    [Range(0f, 1f)]
+    public float volume = 1f;
+    public float startTime = 0f; // Start time in seconds
 }

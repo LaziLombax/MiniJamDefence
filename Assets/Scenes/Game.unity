@@ -181,9 +181,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 0}
   audioSourcePoolSize: 10
-  laserSounds: []
-  blasterSounds: []
-  asteroidHitSounds: []
+  laserSounds:
+  - clip: {fileID: 8300000, guid: c770115629bf28f46a7d3c9ebf5b82a4, type: 3}
+    volume: 0.094
+    startTime: 0
+  blasterSounds:
+  - clip: {fileID: 8300000, guid: 3a79f4cb312bd7e48a67c4c41bce8bad, type: 3}
+    volume: 0.547
+    startTime: 0
+  turretSounds:
+  - clip: {fileID: 8300000, guid: a903cb31646c64a449d0cd2596a9919d, type: 3}
+    volume: 1
+    startTime: 0
+  asteroidHitSounds:
+  - clip: {fileID: 8300000, guid: 0b5260762babbb84eb01beecb2e8f86d, type: 3}
+    volume: 0.512
+    startTime: 0
+  - clip: {fileID: 8300000, guid: b0906fa1aea4a1b4397a8dc6e8d88fb6, type: 3}
+    volume: 0.256
+    startTime: 0
 --- !u!4 &1243747540
 Transform:
   m_ObjectHideFlags: 0
@@ -415,11 +431,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8124698958886544172, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -730
       objectReference: {fileID: 0}
     - target: {fileID: 8673024680729693907, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
       propertyPath: m_Name
       value: UI GAME
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673024680729693907, guid: 4fb8fd521504c2a4c99283da75da183e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

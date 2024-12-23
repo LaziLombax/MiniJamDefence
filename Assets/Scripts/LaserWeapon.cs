@@ -24,9 +24,11 @@ public class LaserWeapon : MonoBehaviour
         if (!isCoolingDown)
         {
             ShootLaser();
+            SoundManager.Instance.PlayLaserSound();
         }
         else
         {
+            SoundManager.Instance.StopLaserSound();
             DisableLaser();
         }
 

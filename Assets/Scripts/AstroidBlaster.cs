@@ -27,21 +27,7 @@ public class AstroidBlaster : MonoBehaviour
     {
         // Instantiate the projectile at the shooter's position
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
-
-        //// Get the direction the shooter is currently facing
-        //Vector3 baseDirection = transform.right;
-
-        //// Apply a random spread to the projectile's direction
-        //float randomSpread = Random.Range(-inaccuracy, inaccuracy);
-        //Vector3 shootDirection = Quaternion.Euler(0, 0, randomSpread) * baseDirection;
-
-        //// Add force to the projectile's Rigidbody2D component
-        //Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        //rb.linearVelocity = shootDirection * projectileSpeed;
-
-        //// Align the projectile's local right direction with its velocity
-        //projectile.transform.right = rb.linearVelocity.normalized;
-
+        SoundManager.Instance.PlaySound(SoundManager.Instance.blasterSounds);
         Destroy(projectile, 3f);
     }
 }

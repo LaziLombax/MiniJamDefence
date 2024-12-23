@@ -61,6 +61,7 @@ public class Turret : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         GameObject bullet = Instantiate(bulletPrefab, transform.position, rotation);
         Bullet bulletScript = bullet.GetComponent<Bullet>();
+        SoundManager.Instance.PlaySound(SoundManager.Instance.turretSounds);
         if (bulletScript != null)
         {
             bulletScript.bulletType = BulletType.Turret;

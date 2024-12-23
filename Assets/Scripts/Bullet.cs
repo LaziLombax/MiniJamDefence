@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Asteroid")
         {
+            SoundManager.Instance.PlaySound(SoundManager.Instance.asteroidHitSounds);
             collision.gameObject.GetComponent<Asteroid>().TakeDamage(CalculateDamage(), WeaponType.Basic, 0f);
             Destroy(gameObject);
         }
