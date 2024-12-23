@@ -77,7 +77,7 @@ public class SoundManager : MonoBehaviour
     // Play laser sound with optional looping
     public void PlayLaserSound(bool loop = false)
     {
-        PlaySound(laserSounds, loop);
+        //PlaySound(laserSounds, loop);
     }
 
     // Stop laser sound

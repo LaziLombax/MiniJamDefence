@@ -48,7 +48,7 @@ MonoBehaviour:
   audioSourcePoolSize: 10
   laserSounds:
   - clip: {fileID: 8300000, guid: c770115629bf28f46a7d3c9ebf5b82a4, type: 3}
-    volume: 0.094
+    volume: 0.1
     startTime: 0
   blasterSounds:
   - clip: {fileID: 8300000, guid: 3a79f4cb312bd7e48a67c4c41bce8bad, type: 3}
