@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      neon-space-32x_0: 260506129396419027
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

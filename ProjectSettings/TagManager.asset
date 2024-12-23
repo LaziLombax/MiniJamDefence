@@ -12,6 +12,7 @@ TagManager:
   - Laser
   - Mine
   - DefenceRig
+  - Turret
   layers:
   - Default
   - TransparentFX

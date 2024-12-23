@@ -86,8 +86,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (InputHandler.Instance.TestL())
-            UIHandler.UpgradeMenu();
+    //    if (InputHandler.Instance.TestL())
+    //        UIHandler.UpgradeMenu();
     }
 
     void Awake()
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
             InputHandler = InputHandler.Instance;
             availableUpgrades = (UpgradeMethod[])System.Enum.GetValues(typeof(UpgradeMethod));
             defenceSystem = GameObject.FindGameObjectWithTag("DefenceRig").GetComponent<DefenseSystem>();
@@ -128,11 +128,15 @@ public class GameManager : MonoBehaviour
     {
         // Calculate damage based on the size of the asteroid
         float asteroidSize = asteroid.transform.localScale.x;
-        float damage = asteroidSize * 10; // Example: damage is 10 times the size of the asteroid
+        float damage = asteroidSize * 15; // Example: damage is 10 times the size of the asteroid
 
         // Reduce the health of the earth
         health -= damage;
-
+        UIHandler.UpdateHealthBar(health);
+        if (health < 0)
+        {
+            UIHandler.ShowGameOver();
+        }
         Debug.Log("Damage recorded for asteroid: " + asteroid.name + ", Damage: " + damage + ", Earth Health: " + health);
     }
 

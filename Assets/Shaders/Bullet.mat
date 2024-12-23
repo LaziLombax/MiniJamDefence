@@ -74,7 +74,7 @@ Material:
     - _bits: 28.2
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Colour: {r: 46.885822, g: 143.29163, b: 145.31865, a: 0}
+    - _Colour: {r: 6.8919477, g: 16.93798, b: 57.9799, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

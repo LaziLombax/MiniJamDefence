@@ -20,11 +20,14 @@ public class UIHandler : MonoBehaviour
     public Slider mineralBar;
     public float currentTimer;
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI endTimer;
+    public TextMeshProUGUI healthText;
 
     [Header("UI Buttons")]
     public Button playButton;
-    public Button settingsButton;
-    public Button quitButton;
+    public Button menuButton;
+    //public Button settingsButton;
+    //public Button quitButton;
 
     private InputHandler playerInput;
     private GameManager gameManager;
@@ -42,13 +45,15 @@ public class UIHandler : MonoBehaviour
             gameManager.UIHandler = this;
             UpdateResourceBar(gameManager.currentResourcesNeeded, gameManager.resources);
             StartCoroutine(FadeOutBlack());
+            menuButton.onClick.AddListener(delegate { ChangeUI("ShowMainMenu", 0f); });
+            menuButton.onClick.AddListener(ConfirmFade);
         }
         playerInput = InputHandler.Instance;
     }
     private void Update()
     {
         // Increase time as the game runs
-        if (SceneManager.GetActiveScene().name == "Test")
+        if (SceneManager.GetActiveScene().name == "Game")
         {
             if (playerInput.MainMenu())
                 ChangeUI("ShowMainMenu", 0f);
@@ -75,16 +80,14 @@ public class UIHandler : MonoBehaviour
     }
     public void ShowGameOver()
     {
-        StartCoroutine(FadeInBlack("GameOver"));
+        endTimer.text = timerText.text;
+        Time.timeScale = 0f;
+        FadeOutCanvasGroupOnClick(gameOverPanel);
     }
 
     private void OnPlayButtonClicked()
     {
-        StartCoroutine(FadeInBlack("Test"));
-    }
-
-    public void LoadSceneWithDelay(string sceneString)
-    {
+        StartCoroutine(FadeInBlack("Game"));
     }
 
     //private void OnSettingsButtonClicked()
@@ -103,6 +106,11 @@ public class UIHandler : MonoBehaviour
     {
         mineralBar.maxValue = max;
         mineralBar.value = current;
+    }
+    public void UpdateHealthBar(float current)
+    {
+        string healthString = Mathf.Clamp(Mathf.Ceil(current), 0, 100).ToString();
+        healthText.text = "Population " + healthString + "%";
     }
 
 
@@ -136,8 +144,12 @@ public class UIHandler : MonoBehaviour
             {
                 yield return null;
             }
-        }
 
+        }
+        while (!fadeCheck) // Wait for UI click action
+        {
+            yield return null;
+        }
         startAlpha = canvasGroup.alpha;
         elapsed = 0f;
 

@@ -48,6 +48,6 @@ MonoBehaviour:
   spawnInterval: 5
   difficultyIncrement: 0.5
   initSpawnDistance: 2
-  baseHealth: 6
+  baseHealth: 8
   baseSize: 1
   difficulty: 1

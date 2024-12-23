@@ -543,7 +543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 328.79}
+  m_AnchoredPosition: {x: 0, y: 142}
   m_SizeDelta: {x: 500, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2458982710940804285
@@ -951,9 +951,10 @@ MonoBehaviour:
   mineralBar: {fileID: 0}
   currentTimer: 0
   timerText: {fileID: 0}
+  endTimer: {fileID: 0}
+  healthText: {fileID: 0}
   playButton: {fileID: 7361068515828215373}
-  settingsButton: {fileID: 0}
-  quitButton: {fileID: 0}
+  menuButton: {fileID: 0}
   upgradeMenu: {fileID: 0}
   upgradeCards: []
   upgradeUIInfomation: []
@@ -1063,7 +1064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 100}
+  m_AnchoredPosition: {x: 0, y: -86.79002}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &6822490543578058203
@@ -1189,7 +1190,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Title \nof\nGame"
+  m_text: 'Asteroid
+
+    Survivor'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2deeca95662378b4aa8d36c293477392, type: 2}
   m_sharedMaterial: {fileID: -9218381865003929549, guid: 2deeca95662378b4aa8d36c293477392, type: 2}
